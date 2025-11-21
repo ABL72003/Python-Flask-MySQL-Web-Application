@@ -1,0 +1,25 @@
+<!-- this is the only page that is different becuase there is a pop up when you delete so I can't just throw it in edit.html-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Delete Dependent</h1>
+
+    <div class="post">
+        <p><strong>Dependent ID:</strong> {{ dep['id'] }}</p>
+        <p><strong>Name:</strong> {{ dep['firstName'] }} {{ dep['lastName'] }}</p>
+        <p><strong>Relationship:</strong> {{ dep['relationship'] }}</p>
+        <p><strong>Employee:</strong> {{ dep['employeeName'] }} (ID: {{ dep['emp_id'] }})</p>
+    </div>
+
+    <!-- makes text 1.2x bigger-->
+    <p style="color:#cf002d; font-size:1.2em;">
+        Are you sure you want to delete this dependent?
+    </p>
+
+    <form action="{{ url_for('delete', id=dep['id']) }}" method="post" style="display:inline;">
+        <button class="button is-danger" type="submit">Yes, Delete</button>
+    </form>
+
+    <a class="button is-light" href="{{ url_for('index') }}">Cancel</a>
+{% endblock %}
