@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
 <!--Used professors code and repalced it with correct fields-->
 {% block content %}
-    <h1>{% block title %} Edit Dependent {{ dep['firstName'] }} {{ dep['lastName'] }} {% endblock %}</h1>
+    <h1>{% block title %} Edit Dependent {{ dependent['firstName'] }} {{ dependent['lastName'] }} {% endblock %}</h1>
 
       <form method="post">
         <label for="firstName">First Name</label><br>
         <input type="text" name="firstName" placeholder="First Name"
-        value="{{ request.form['firstName'] or dep['firstName'] }}">
+        value="{{ request.form['firstName'] or dependent['firstName'] }}">
         </input>
         <br>
 
         <label for="lastName">Last Name</label><br>
         <input type="text" name="lastName" placeholder="Last Name"
-        value="{{ request.form['lastName'] or dep['lastName'] }}">
+        value="{{ request.form['lastName'] or dependent['lastName'] }}">
         </input>
         <br>
 
         <label for="relationship">Relationship</label><br>
         <input type="text" name="relationship" placeholder="Relationship"
-        value="{{ request.form['relationship'] or dep['relationship'] }}">
+        value="{{ request.form['relationship'] or dependent['relationship'] }}">
         </input>
         <br>
 
