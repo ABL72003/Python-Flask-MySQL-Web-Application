@@ -8,7 +8,7 @@
             <p>Dependent ID: {{ dep['id'] }}</p>
             <p>Name: {{ dep['firstName'] }} {{ dep['lastName'] }}</p>
             <p>Relationship: {{ dep['relationship'] }}</p>
-            <p>Employee: {{ dep['employeeName'] }} (ID: {{ dep['emp_id'] }})</p>
+            <p>Relation to Employee: {{ dep['employeeName'] }} - ID: {{ dep['emp_id'] }}</p>
 
             <a href="{{ url_for('edit', id=dep['id']) }}"> Edit Dependent</a>
             <form action="{{ url_for('delete_post', id=dep['id']) }}"
